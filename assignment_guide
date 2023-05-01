@@ -1,0 +1,22 @@
+Create a backend and frontend web application to support league match information storage and retrieval using Python for the backend and JavaScript + HTML for the frontend. The frontend should be a client-side single-page app. Store the code in a GitHub repository and send me a link to your suggested solution. Spend a maximum of 4 hours on this task.
+
+
+1. Backend: Create an HTTP API using Python 3 that supports HTTP GET and POST methods.
+ 
+POST method: Accepts league match result data in JSON format for sports like football, ice hockey, or any other league game. Store the data in a database of your choice.
+GET method: Retrieves stored league match result data from the database and returns it as JSON.
+
+
+2. Frontend: Create a client-side single-page app using HTML, CSS, and JavaScript.
+ 
+The app should include a form to input league match result data (e.g., sport, teams, scores, date).
+On form submission, send the data to the backend API using a POST request.
+Fetch the stored match results using the API's GET method, which returns data in JSON format, and display the results on the same page.
+
+
+3. Bonus points for implementing the following:
+ 
+Data validation (both client-side and server-side)
+Error handling and proper display of error messages
+A clean, user-friendly interface
+Using Docker and Docker Compose for easy deployment and setup
