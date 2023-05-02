@@ -14,19 +14,33 @@
         <div class="card rounded-5">
           <div class="card-body p-5">
             <h4 class="text-center my-3 pb-3">League Match History</h4>
-            <form class="row justify-content-center" action="/add" method="post">
+            <form name="myForm" onsubmit="return validateForm()" class="row justify-content-center" action="/add" method="post">
               <div class="col-4">
                 <div class="form-outline">
-                  <input type="text" id="sports" name="sports" class="form-control" placeholder="Enter a sport name:"/>
+                  <label for="sports">Choose a sport:</label>
+                  <select class="form-control" name="sports" class="dropdown-menu w-100" id="sports">
+                    <option value="Soccer">Soccer</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Ice Hockey">Ice Hockey</option>
+                    <option value="Volleyball">Volleyball</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Gymnastics">Gymnastics</option>
+                    <option value="Fencing">Fencing</option>
+                    <option value="Table Tennis">Table Tennis</option>
+                    <option value="Other">Other</option>
+                  </select>
                   <br>
-                  <input type="text" id="team" name="team" class="form-control" placeholder="Enter a team name:"/>
+                  <label for="team">Enter a team name:</label>
+                  <input type="text" id="team" name="team" class="form-control" placeholder="Team name"/>
                 </div>
               </div>
               <div class="col-4">
                 <div class="form-outline">
-                  <input type="text" id="against" name="against" class="form-control" placeholder="This team win against:"/>
+                  <label for="against">This team win against:</label>
+                  <input type="text" id="against" name="against" class="form-control" placeholder="Win against"/>
                   <br>
-                  <input type="text" id="score" name="score" class="form-control" placeholder="Score:"/>
+                  <label for="score">Score:</label>
+                  <input type="text" id="score" name="score" class="form-control" placeholder="Score"/>
                 </div>
               </div>
               <div class="col-2">
@@ -77,5 +91,26 @@
     </div>
   </div>
 </section>
+
+<script>
+  function validateForm() {
+  i = document.forms["myForm"]["team"].value;
+  j = document.forms["myForm"]["against"].value;
+  k = document.forms["myForm"]["score"].value;
+  if (i == "" || j == "" || k == "") {
+    alert("Field must be filled out");
+    return false;
+  }
+  if (i.length > 30 || j.length > 30 || k.length > 30) {
+    alert("Field should not be more than 30 characters");
+    return false;
+  }
+}
+</script>
 </body>
 </html>  
+
+<!-- 
+template is adapted from:
+https://tutorial101.blogspot.com/2023/02/python-flask-simple-to-do-sqlalchemy.html 
+-->
