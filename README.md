@@ -6,12 +6,12 @@ In order to store the data, user can add the name of the sport, along with the t
 
 Setup for the requirements: 
 ```console
-pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 
 Run the application:
 ```console
-python3 app.py`
+python3 app.py
 ```
 
 Access in own browser: http://127.0.0.1:5000
